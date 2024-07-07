@@ -34,15 +34,17 @@ const Schedule = () => {
 
   return (
     <Container>
-      <div className="flex items-center justify-center gap-5 min-h-[70vh]">
-        <div className="w-1/2">
+      <div className="flex md:flex-row flex-col items-center justify-center gap-5 min-h-[70vh] p-2">
+        <div className="md:w-1/2">
           <div className="flex text-gr items-center gap-2">
             <FaChevronLeft />
             <p>Retour</p>
           </div>
-          <div className="bg-primary/20 p-5 rounded-2xl mt-5">
-            <h3 className="text-2xl">Séléctionnez un motif de Rendez-vous</h3>
-            <div className="grid grid-cols-3 gap-10 mt-5">
+          <div className="bg-primary/20 md:p-5 p-2 rounded-2xl mt-5">
+            <h3 className="md:text-2xl text-xl">
+              Séléctionnez un motif de Rendez-vous
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 md:gap-10 gap-5 mt-5">
               {data.map((item, i) => (
                 <div
                   key={i}
@@ -52,7 +54,7 @@ const Schedule = () => {
                       color: "white",
                     },
                   }}
-                  className="relative bg-white shadow-lg h-[81px] flex items-center justify-center text-center rounded-xl font-semibold hover:bg-primary hover:text-white cursor-pointer"
+                  className="p-2 relative bg-white shadow-lg h-[100px] md:h-[81px] flex items-center justify-center text-center rounded-xl font-semibold hover:bg-primary hover:text-white cursor-pointer"
                 >
                   {item}
                   <hr
@@ -68,7 +70,7 @@ const Schedule = () => {
             </div>
           </div>
         </div>
-        <div className="relative w-1/3">
+        <div className="relative md:w-1/3">
           <div className="bg-white drop-shadow-xl p-3 rounded-2xl">
             <div className="flex items-center gap-2 text-xs">
               <FaCircle className="text-red-500" />
