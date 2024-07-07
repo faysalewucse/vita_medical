@@ -13,12 +13,12 @@ const MedicineCard = () => {
   return (
     <div
       onClick={() => navigate(CONFIRMED_PATH)}
-      className="flex gap-2 bg-white p-5 rounded-2xl cursor-pointer"
+      className="flex md:flex-row flex-col gap-2 bg-white md:p-5 p-2 rounded-2xl cursor-pointer"
     >
       <img className="w-16 h-16" src={avatar} alt="avtr" />
       <div className="">
         <p className="text-primary mb-2 font-medium">Dr Sarah Fargeon</p>
-        <div className="flex items-center justify-start gap-2">
+        <div className="flex md:flex-row flex-col md:items-center justify-start gap-2">
           <Skill name={"Reservation en ligne"} />
           <Skill name={"Conventionné secteur 1"} />
         </div>
@@ -47,8 +47,11 @@ const MedicineCard = () => {
             {dates.map((date, i) => (
               <div className="" key={i}>
                 <div className="mt-2 flex flex-col gap-2 text-primary font-medium">
-                  {schedule[10].map((time) => (
-                    <p className="bg-primary text-white px-2 rounded-lg">
+                  {schedule[10].map((time, index) => (
+                    <p
+                      key={index}
+                      className="bg-primary text-white px-2 rounded-lg"
+                    >
                       {time}
                     </p>
                   ))}
