@@ -4,7 +4,7 @@ import vita from "../../assets/VITA.png";
 import { useState } from "react";
 import Container from "../Container";
 import { useNavigate } from "react-router-dom";
-import { APPOINTMENT_PATH } from "../../slugs";
+import { APPOINTMENT_PATH, DOCUMENTS_PATH } from "../../slugs";
 import { Drawer } from "antd";
 
 const Navbar = () => {
@@ -12,10 +12,6 @@ const Navbar = () => {
   const [active, setActive] = useState("Carte");
 
   const [open, setOpen] = useState(false);
-
-  const showDrawer = () => {
-    setOpen(true);
-  };
 
   const onClose = () => {
     setOpen(false);
@@ -28,7 +24,7 @@ const Navbar = () => {
     },
     {
       label: "Documents",
-      path: "/",
+      path: DOCUMENTS_PATH,
     },
     {
       label: "Rendex-vous",
@@ -54,7 +50,8 @@ const Navbar = () => {
           {navItems.map((item, index) => (
             <p
               onClick={() => {
-                setActive(item);
+                console.log(item);
+                setActive(item.label);
                 navigate(item.path);
               }}
               className={`${
@@ -83,6 +80,7 @@ const Navbar = () => {
             <p
               onClick={() => {
                 setActive(item);
+                console.log(active);
                 navigate(item.path);
               }}
               className={`${

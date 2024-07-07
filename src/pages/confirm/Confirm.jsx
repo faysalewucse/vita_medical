@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Container from "../../components/Container";
 import avatar from "../../assets/avatar.png";
 import c1 from "../../assets/confirm1.svg";
@@ -82,9 +82,6 @@ const Confirm = () => {
             <h3 className="font-semibold">Plan et moyens d’accés</h3>
             <iframe
               className="rounded-2xl h-80 w-96 bg-white p-2 border border-primary shadow-md shadow-primary my-10"
-              frameborder="0"
-              marginheight="0"
-              marginwidth="0"
               id="gmap_canvas"
               src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Dhaka+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             ></iframe>

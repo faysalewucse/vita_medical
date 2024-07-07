@@ -1,8 +1,6 @@
-import React from "react";
-
 const AddCard2 = ({ image }) => {
   return (
-    <div className="p-5 border flex gap-5">
+    <div className="p-5 border flex gap-5 bg-primary/10">
       <img className="w-16 h-16" src={image} alt="avtr" />
       <div className="">
         <p className="text-lg font-medium">Visiter de prévention</p>

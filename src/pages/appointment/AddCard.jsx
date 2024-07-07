@@ -2,7 +2,7 @@ import avatar from "../../assets/avatar.png";
 
 const AddCard = ({ image }) => {
   return (
-    <div className="p-5 border flex gap-5">
+    <div className="p-5 border flex gap-5 bg-primary/10">
       <img className="w-16 h-16" src={image ? image : avatar} alt="avtr" />
       <div className="">
         <p className="text-lg font-medium">Dr Sarah Fargeon</p>
