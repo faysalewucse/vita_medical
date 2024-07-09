@@ -4,7 +4,7 @@ import vita from "../../assets/VITA.png";
 import { useState } from "react";
 import Container from "../Container";
 import { useNavigate } from "react-router-dom";
-import { APPOINTMENT_PATH, DOCUMENTS_PATH } from "../../slugs";
+import { APPOINTMENT_PATH, DOCUMENTS_PATH, PROFILE_PATH } from "../../slugs";
 import { Drawer } from "antd";
 
 const Navbar = () => {
@@ -32,7 +32,7 @@ const Navbar = () => {
     },
     {
       label: "Parameters",
-      path: "/",
+      path: PROFILE_PATH,
     },
   ];
 
