@@ -8,26 +8,44 @@ const MedicineCard = () => {
 
   const days = ["Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"];
   const dates = [10, 11, 12, 13, 14, 15];
-  const schedule = { 10: ["10:00", "11:00"], 12: ["12:00", "01:00"] };
+  const schedule = {
+    10: ["10:00", "11:00"],
+    12: [
+      "12:00",
+      "13:00",
+      "12:00",
+      "13:00",
+      "13:00",
+      "12:00",
+      "13:00",
+      "13:00",
+      "12:00",
+      "13:00",
+    ],
+  };
 
   return (
     <div
       onClick={() => navigate(CONFIRMED_PATH)}
       className="flex md:flex-row flex-col gap-2 bg-white md:p-5 p-2 rounded-2xl cursor-pointer"
     >
-      <img className="w-16 h-16" src={avatar} alt="avtr" />
-      <div className="">
-        <p className="text-primary mb-2 font-medium">Dr Sarah Fargeon</p>
+      <div>
+        <div className="flex gap-5">
+          <img className="w-16 h-16" src={avatar} alt="avtr" />
+          <div className="">
+            <p className="text-primary mb-2 font-medium">Dr Sarah Fargeon</p>
+            <div className="font-medium flex items-center gap-2 bg-background4 text-primary w-fit rounded-xl px-3 py-1">
+              <FaPhoneAlt />
+              01.45.37.82.26
+            </div>
+            <p className="text-gr5 my-5 font-medium w-2/3">
+              41 Avenue du général Gallieni 92190 Meudon
+            </p>
+          </div>
+        </div>
         <div className="flex md:flex-row flex-col md:items-center justify-start gap-2">
           <Skill name={"Reservation en ligne"} />
           <Skill name={"Conventionné secteur 1"} />
-        </div>
-        <p className="text-gr my-5">
-          41 Avenue du général Gallieni 92190 Meudon
-        </p>
-        <div className="flex items-center gap-2 bg-primary/20 w-fit rounded-2xl px-3 py-1">
-          <FaPhoneAlt />
-          01.45.37.82.26
         </div>
       </div>
       <div className="flex-1 flex flex-col">
@@ -36,32 +54,36 @@ const MedicineCard = () => {
             <FaChevronLeft className="text-primary" />
             {days.map((day, i) => (
               <div className="flex flex-col items-center" key={i}>
-                <p className="text-primary font-medium">{day}</p>{" "}
-                <p className="text-gr">{dates[i]}Avr</p>
+                <p className="text-primary font-medium">{day}</p>
+                <p className="text-gr">{dates[i]} Avr</p>
               </div>
             ))}
             <FaChevronRight className="text-primary" />
           </div>
-          <div className="px-4 py-2 flex gap-2 items-center justify-between">
+          <div className="px-4 ml-12 py-2 h-full flex gap-2 items-center justify-between">
             <div></div>
             {dates.map((date, i) => (
-              <div className="" key={i}>
-                <div className="mt-2 flex flex-col gap-2 text-primary font-medium">
-                  {schedule[10].map((time, index) => (
-                    <p
-                      key={index}
-                      className="bg-primary text-white px-2 rounded-lg"
-                    >
-                      {time}
-                    </p>
-                  ))}
-                </div>
+              <div className="h-full" key={i}>
+                {schedule[date] ? (
+                  <div className="my-2 flex flex-col gap-2 text-primary font-medium">
+                    {schedule[date].map((time, index) => (
+                      <p
+                        key={index}
+                        className="bg-primary text-white px-2 rounded-lg"
+                      >
+                        {time}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <div></div>
+                )}
               </div>
             ))}
             <div></div>
           </div>
         </div>
-        <p className="text-center underline text-gr font-medium">
+        <p className="text-center underline text-gr font-semibold">
           Afficher plus d’horaires
         </p>
       </div>

@@ -11,30 +11,77 @@ const Confirm = () => {
 
   return (
     <Container>
-      <div>
-        <div className="bg-primary/5 p-10 flex gap-5 round">
+      <div className="pb-10">
+        <div className="bg-background2 p-10 flex gap-5 rounded-2xl">
           <div className="w-1/4 bg-white flex flex-col items-center p-5 rounded-2xl">
-            <h3 className="mb-5">Récapitulatif du rendez-vous</h3>
-            <img className="w-16" src={avatar} alt="avatar" />
-            <p className="text-primary mt-3">Dr Andréa Fargeaon</p>
+            <h3 className="mb-5  font-medium text-xl ">
+              Récapitulatif du rendez-vous
+            </h3>
+            <img className="w-24" src={avatar} alt="avatar" />
+            <p className="text-primary7 font-semibold mt-3">
+              Dr Andréa Fargeaon
+            </p>
             <div className="relative flex items-center my-10">
               <div className="absolute left-4 flex flex-col items-center text-primary font-semibold bg-white rounded-full shadow-md p-3 border">
                 <p>18</p>
                 <p>Jan</p>
               </div>
-              <div className="bg-gr/20 pl-20 pr-5 rounded-full p-2">
+              <div className="bg-background5 pl-20 pr-5 rounded-full text-base font-medium p-2">
                 Consultation dentaire
               </div>
             </div>
-            <p>Votre Rendez-vous est confirmé</p>
-            <p className="text-primary font-medium">18h00</p>
-            <h6>Note du cabinet</h6>
-            <p className="text-center">
+            <p className="text-gr6 font-medium">
+              Votre Rendez-vous est confirmé
+            </p>
+            <p className="text-primary4 font-medium text-xl">18h00</p>
+            <h6 className="font-semibold mt-10">Note du cabinet</h6>
+            <p className="text-center text-gr7 text-base mt-5">
               Veuillez vous présenter 15 minutes avant le début du rendez-vous,
               n’oubliez pas d’apporter votre carte vital et carte mutuelle. en
               cas d’impossibilité merci d’avertir 48h avant le début du
               rendez-vous
             </p>
+          </div>
+          <div className="w-2/4 bg-white p-5 flex flex-col items-center rounded-2xl">
+            <h3 className="font-semibold">Plan et moyens d’accés</h3>
+            <iframe
+              className="rounded-2xl h-80 w-96 bg-white p-2 border border-primary shadow-md shadow-primary my-10"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Dhaka+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+            <div className="flex items-center justify-center gap-10">
+              <Details
+                icon={c1}
+                label={"Cabinet dentaire Bellevue"}
+                bgColor={"#FFE8E8"}
+                desc={
+                  <div>
+                    <p>Adresse: 41 Avenue du général</p>
+                    <p>Galliéni 92190 MEUDON</p>
+                    <p>Téléphone: 01.46.90.82.84</p>
+                  </div>
+                }
+              />
+              <Details
+                icon={c2}
+                label={"Moyens de transport"}
+                bgColor={"#CBEFBE8C"}
+                desc={
+                  <div>
+                    <p>Tramway - Brimborion (ligne T2)</p>
+                    <p>RER - Gare de Sevres Rive Gauche (ligne N)</p>
+                    <p>Bus - Gare De Bellevue (lignes 169 et 389)</p>
+                  </div>
+                }
+              />
+            </div>
+            <Details
+              rootClassName={"mt-10 flex flex-col items-center"}
+              icon={info}
+              label={"Moyens de transport"}
+              bgColor={"#FBDA6642"}
+              desc={"Rez-de-chaussée - Entrée accessible - Parking gratuit"}
+            />
           </div>
           <div className="w-1/4">
             <div className="flex flex-col gap-5">
@@ -77,47 +124,6 @@ const Confirm = () => {
                 )}
               </div>
             </div>
-          </div>
-          <div className="w-2/4 bg-white p-5 flex flex-col items-center rounded-2xl">
-            <h3 className="font-semibold">Plan et moyens d’accés</h3>
-            <iframe
-              className="rounded-2xl h-80 w-96 bg-white p-2 border border-primary shadow-md shadow-primary my-10"
-              id="gmap_canvas"
-              src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Dhaka+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            ></iframe>
-            <div className="flex items-center justify-center gap-10">
-              <Details
-                icon={c1}
-                label={"Cabinet dentaire Bellevue"}
-                bgColor={"#FFE8E8"}
-                desc={
-                  <div>
-                    <p>Adresse: 41 Avenue du général</p>
-                    <p>Galliéni 92190 MEUDON</p>
-                    <p>Téléphone: 01.46.90.82.84</p>
-                  </div>
-                }
-              />
-              <Details
-                icon={c2}
-                label={"Moyens de transport"}
-                bgColor={"#CBEFBE8C"}
-                desc={
-                  <div>
-                    <p>Tramway - Brimborion (ligne T2)</p>
-                    <p>RER - Gare de Sevres Rive Gauche (ligne N)</p>
-                    <p>Bus - Gare De Bellevue (lignes 169 et 389)</p>
-                  </div>
-                }
-              />
-            </div>
-            <Details
-              rootClassName={"mt-10 flex flex-col items-center"}
-              icon={info}
-              label={"Moyens de transport"}
-              bgColor={"#FBDA6642"}
-              desc={"Rez-de-chaussée - Entrée accessible - Parking gratuit"}
-            />
           </div>
         </div>
         <div className="flex items-center justify-center gap-5 mt-5">
