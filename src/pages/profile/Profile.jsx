@@ -76,7 +76,7 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 mt-12 flex flex-col gap-10">
+          <div className="flex-1 mt-5 md:mt-12 flex flex-col gap-10">
             <RoundedContainer>
               <RoundedContainer white>
                 <h3 className="text-center font-semibold text-base mb-5">
@@ -150,7 +150,7 @@ const Profile = () => {
               </RoundedContainer>
             </RoundedContainer>
           </div>
-          <div className="flex-1 flex flex-col gap-10 mt-12">
+          <div className="flex-1 flex flex-col gap-10 md:mt-12 mt-5">
             <RoundedContainer>
               <RoundedContainer white>
                 <h3 className="text-center font-semibold text-base">

@@ -27,18 +27,18 @@ const MedicineCard = () => {
   return (
     <div
       onClick={() => navigate(CONFIRMED_PATH)}
-      className="flex md:flex-row flex-col gap-2 bg-white md:p-5 p-2 rounded-2xl cursor-pointer"
+      className="flex md:flex-row flex-col gap-2 bg-white p-2 rounded-2xl cursor-pointer"
     >
       <div>
         <div className="flex gap-5">
           <img className="w-16 h-16" src={avatar} alt="avtr" />
           <div className="">
             <p className="text-primary mb-2 font-medium">Dr Sarah Fargeon</p>
-            <div className="font-medium flex items-center gap-2 bg-background4 text-primary w-fit rounded-xl px-3 py-1">
+            <div className="font-medium flex items-center gap-2 bg-background4 text-linear1 text-xs w-fit rounded-xl px-3 py-1">
               <FaPhoneAlt />
               01.45.37.82.26
             </div>
-            <p className="text-gr5 my-5 font-medium w-2/3">
+            <p className="text-gr9 my-5 text-sm font-medium w-2/3">
               41 Avenue du général Gallieni 92190 Meudon
             </p>
           </div>
@@ -50,12 +50,12 @@ const MedicineCard = () => {
       </div>
       <div className="flex-1 flex flex-col">
         <div className="bg-primary/20 rounded-xl flex-1 mb-5">
-          <div className="bg-white shadow-md rounded-xl px-4 py-2 flex gap-2 items-center justify-between">
+          <div className="bg-white shadow-md rounded-xl p-2 flex gap-2 items-center justify-between">
             <FaChevronLeft className="text-primary" />
             {days.map((day, i) => (
               <div className="flex flex-col items-center" key={i}>
-                <p className="text-primary font-medium">{day}</p>
-                <p className="text-gr">{dates[i]} Avr</p>
+                <p className="text-primary text-base font-medium">{day}</p>
+                <p className="text-gr8 text-[11px]">{dates[i]} Avr</p>
               </div>
             ))}
             <FaChevronRight className="text-primary" />
@@ -69,7 +69,7 @@ const MedicineCard = () => {
                     {schedule[date].map((time, index) => (
                       <p
                         key={index}
-                        className="bg-primary text-white px-2 rounded-lg"
+                        className="bg-primary text-white px-2 rounded"
                       >
                         {time}
                       </p>
@@ -94,5 +94,9 @@ const MedicineCard = () => {
 export default MedicineCard;
 
 const Skill = ({ name }) => {
-  return <p className="bg-primary py-1 px-3 rounded-2xl text-white">{name}</p>;
+  return (
+    <p className="bg-gradient-to-l to-linear1 from-linear2 text-xs p-1 rounded-2xl text-white font-medium">
+      {name}
+    </p>
+  );
 };

@@ -6,8 +6,12 @@ import {
 } from "react-icons/fa";
 import Container from "../../components/Container";
 import { Progress } from "antd";
+import { useState } from "react";
+import vector from "../../assets/vector.png";
 
 const Schedule = () => {
+  const [hovering, setHovering] = useState();
+
   const data = [
     "Première consultation dentaire",
     "Détartrage",
@@ -22,68 +26,70 @@ const Schedule = () => {
 
   const hexColors = [
     "#FF5733", // A vibrant red-orange
-    "#33FF57", // A bright green
-    "#3357FF", // A strong blue
-    "#FF33A1", // A vivid pink
-    "#33FFF5", // A bright cyan
-    "#FF9933", // A warm orange
-    "#9933FF", // A rich purple
-    "#33FF99", // A fresh mint green
-    "#FF3333", // A bold red
+    "#7953E7", // A bright green
+    "#90C34E", // A strong blue
+    "#CB897A", // A vivid pink
+    "#E8BD25", // A bright cyan
+    "#DF1E1E", // A warm orange
+    "#F13B93", // A rich purple
+    "#7DC0F1", // A fresh mint green
+    "#8F8F8F", // A bold red
   ];
 
   return (
     <Container>
-      <div className="flex md:flex-row flex-col items-center justify-center gap-5 min-h-[70vh] p-2">
+      <div className="flex md:flex-row flex-col items-center gap-5 min-h-[70vh] p-2">
         <div className="md:w-1/2">
-          <div className="flex text-gr items-center gap-2">
+          <div className="flex text-gr11 text-xl font-medium items-center gap-2">
             <FaChevronLeft />
             <p>Retour</p>
           </div>
-          <div className="bg-primary/20 md:p-5 p-2 rounded-2xl mt-5">
-            <h3 className="md:text-2xl text-xl">
-              Séléctionnez un motif de Rendez-vous
-            </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 md:gap-10 gap-5 mt-5">
-              {data.map((item, i) => (
-                <div
-                  key={i}
-                  style={{
-                    color: hexColors[i],
-                    "&:hover": {
-                      color: "white",
-                    },
-                  }}
-                  className="p-2 relative bg-white shadow-lg h-[100px] md:h-[81px] flex items-center justify-center text-center rounded-xl font-semibold hover:bg-primary hover:text-white cursor-pointer"
-                >
-                  {item}
-                  <hr
-                    style={{ border: "2.5px solid #81818133" }}
-                    className="absolute bottom-1 rounded-xl w-1/2 left-1/2 -translate-x-1/2"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="bg-primary/20 text-primary flex items-center justify-center w-fit p-3 mx-auto mt-5 rounded-full gap-2 text-3xl">
-              <FaArrowUp className="cursor-pointer" />
-              <FaArrowDown className="cursor-pointer" />
+          <div className="bg-background6 p-5 rounded-2xl mt-5">
+            <div className="bg-white md:p-5 p-2 rounded-2xl">
+              <h3 className="md:text-2xl text-[28px] font-medium w-1/2">
+                Séléctionnez un motif de Rendez-vous
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 md:gap-10 gap-5 mt-5">
+                {data.map((item, i) => (
+                  <div
+                    onMouseEnter={() => setHovering(i)}
+                    onMouseLeave={() => setHovering()}
+                    key={i}
+                    className={`group p-4 relative bg-white drop-shadow-lg h-[100px] flex items-center justify-center text-center rounded-xl font-semibold text-[15px] cursor-pointer transition-colors duration-300`}
+                    style={{
+                      color: hovering === i ? "white" : hexColors[i],
+                      background: hovering === i ? "#6EB9F8" : "white",
+                    }}
+                  >
+                    {item}
+                    <hr className="absolute bottom-1 w-1/2 left-1/2 transform -translate-x-1/2 border-[2.5px] border-[#81818133] rounded-xl transition-opacity duration-300 opacity-100 group-hover:opacity-0" />
+                  </div>
+                ))}
+              </div>
+              <div className="bg-background6 text-[#6EB9F8] flex items-center justify-center w-fit p-3 mx-auto mt-5 rounded-full gap-2 text-3xl">
+                <FaArrowUp className="cursor-pointer" />
+                <FaArrowDown className="cursor-pointer" />
+              </div>
             </div>
           </div>
         </div>
-        <div className="relative md:w-1/3">
-          <div className="bg-white drop-shadow-xl p-3 rounded-2xl">
+        <div className="relative md:w-1/2 flex items-center justify-center">
+          <img src={vector} alt="" className="absolute -top-5" />
+          <div className="bg-white drop-shadow-xl p-3 rounded-2xl w-[75vh]">
             <div className="flex items-center gap-2 text-xs">
               <FaCircle className="text-red-500" />
               <FaCircle className="text-blue-500" />
               <FaCircle className="text-yellow-500" />
             </div>
             <div className="border rounded-2xl mt-3 py-5 px-3">
-              <p className="text-xs">Première étape</p>
-              <p className="text-primary">Choix du motif de Rendez-vous</p>
-              <p className="bg-primary/10 w-fit py-1 px-4 my-3 rounded-2xl text-primary">
+              <p className="text-sm">Première étape</p>
+              <p className="text-primary text-xl font-medium">
+                Choix du motif de Rendez-vous
+              </p>
+              <p className="bg-primary25p w-fit py-1 px-4 mx-6 my-3 text-base font-medium rounded-2xl text-primaryDark">
                 Première consultation dentaire
               </p>
-              <p>Tarif appliqué et prise en charge</p>
+              <p className="font-medium">Tarif appliqué et prise en charge</p>
               <div className="my-3 bg-[#F8F8F8] p-2 rounded-2xl flex gap-10 items-center justify-center text-xs">
                 <p className="w-20 h-20 rounded-full bg-primary/20 text-primary text-xl font-semibold flex items-center justify-center">
                   23 €

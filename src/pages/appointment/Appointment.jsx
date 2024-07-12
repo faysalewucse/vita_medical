@@ -5,6 +5,7 @@ import heart from "../../assets/heart.png";
 import avatar from "../../assets/avatar.png";
 import AddCard2 from "./AddCard2";
 import { IoCall } from "react-icons/io5";
+import CircleBar from "../../components/CircleBar";
 
 const Appointment = () => {
   return (
@@ -35,9 +36,9 @@ const Appointment = () => {
             <h3 className="text-primary2 font-medium mb-5 text-xl">
               Détail du rendez-vous
             </h3>
-            <div className="flex items-center gap-10">
+            <div className="flex md:flex-row flex-col items-center md:gap-10 gap-5">
               <div className="flex flex-col items-center">
-                <img className="w-24" src={avatar} alt="avtr" />
+                <img className="md:w-24 w-14" src={avatar} alt="avtr" />
                 <p className="text-primary4 font-semibold">
                   Dr Andréa Fargeaon
                 </p>
@@ -95,7 +96,7 @@ const Appointment = () => {
                 pour plus de détail.
               </p> */}
               <div className="bg-white p-5 rounded-2xl">
-                <div className="w-1/2">
+                <div className="md:w-1/2">
                   <h3 className="font-bold text-center">
                     Consultation spécialisée
                   </h3>
@@ -117,6 +118,7 @@ const Appointment = () => {
                     </p>
                   </div>
                 </div>
+                <CircleBar />
               </div>
             </div>
             <h3 className="text-primary2 font-medium my-5 text-xl">
