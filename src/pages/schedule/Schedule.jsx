@@ -46,7 +46,7 @@ const Schedule = () => {
           </div>
           <div className="bg-background6 p-5 rounded-2xl mt-5">
             <div className="bg-white md:p-5 p-2 rounded-2xl">
-              <h3 className="md:text-2xl text-[28px] font-medium w-1/2">
+              <h3 className="md:text-2xl text-[28px] font-medium md:w-1/2">
                 Séléctionnez un motif de Rendez-vous
               </h3>
               <div className="grid grid-cols-2 md:grid-cols-3 md:gap-10 gap-5 mt-5">
@@ -75,11 +75,11 @@ const Schedule = () => {
         </div>
         <div className="relative md:w-1/2 flex items-center justify-center">
           <img src={vector} alt="" className="absolute -top-5" />
-          <div className="bg-white drop-shadow-xl p-3 rounded-2xl w-[75vh]">
+          <div className="bg-white drop-shadow-xl p-3 rounded-2xl md:w-[75vh]">
             <div className="flex items-center gap-2 text-xs">
               <FaCircle className="text-red-500" />
-              <FaCircle className="text-blue-500" />
               <FaCircle className="text-yellow-500" />
+              <FaCircle className="text-green-500" />
             </div>
             <div className="border rounded-2xl mt-3 py-5 px-3">
               <p className="text-sm">Première étape</p>
@@ -98,24 +98,24 @@ const Schedule = () => {
                   <Percentage
                     label={"securité social"}
                     amount={"9,20 €"}
-                    progress={40}
+                    progress={50}
                     color={"#189EFF"}
                   />
                   <Percentage
                     label={"securité social"}
                     amount={"9,20 €"}
-                    progress={40}
+                    progress={80}
                     color={"#90C34E"}
                   />
                   <Percentage
                     label={"securité social"}
                     amount={"9,20 €"}
-                    progress={40}
+                    progress={30}
                     color={"#9D7971"}
                   />
                 </div>
               </div>
-              <p className="text-xs text-center">
+              <p className="text-xs text-center md:w-5/6 md:mx-auto">
                 Les honoraires affichés sont à titre indicatif, Les honoraires
                 ou la prise en charge est susceptible d’etre modifié en fonction
                 selon la couverture social du patient et la nature des actes
@@ -135,7 +135,7 @@ const Percentage = ({ label, amount, progress, color }) => {
   return (
     <div className="flex flex-col items-center">
       <h6 className="">{label}</h6>
-      <div className="w-1/2 flex items-center gap-2">
+      <div className="md:w-1/2 w-full flex items-center gap-2">
         <p style={{ color: color, fontWeight: "bold" }}>{amount}</p>
         <Progress
           className="flex-1"

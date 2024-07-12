@@ -43,7 +43,7 @@ const MedicineCard = () => {
             </p>
           </div>
         </div>
-        <div className="flex md:flex-row flex-col md:items-center justify-start gap-2">
+        <div className="flex md:items-center justify-start gap-2">
           <Skill name={"Reservation en ligne"} />
           <Skill name={"Conventionné secteur 1"} />
         </div>
@@ -95,7 +95,7 @@ export default MedicineCard;
 
 const Skill = ({ name }) => {
   return (
-    <p className="bg-gradient-to-l to-linear1 from-linear2 text-xs p-1 rounded-2xl text-white font-medium">
+    <p className="w-fit bg-gradient-to-l to-linear1 from-linear2 text-xs p-1 rounded-2xl text-white font-medium">
       {name}
     </p>
   );
